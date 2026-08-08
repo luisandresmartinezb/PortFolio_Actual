@@ -1,0 +1,590 @@
+/*
+ * ============================================================
+ * HOJA DE ESTILOS - CV HARVARD / ATS
+ * ============================================================
+ * Código fuente legible y sin minificar.
+ * Las secciones responsive se mantienen separadas mediante
+ * media queries para escritorio, tablet y móvil.
+ * ============================================================
+ */
+
+:root{
+  --navy:#123554;--navy2:#1d527a;--ink:#172536;--muted:#526579;
+  --line:#c7d3de;--soft:#eef4f8;--paper:#fff;--canvas:#e7edf3;
+}
+*{box-sizing:border-box}html{background:var(--canvas);scroll-behavior:smooth}body{margin:0;background:var(--canvas);color:var(--ink);font-family:Arial,"Helvetica Neue",sans-serif;line-height:1.25}a{color:inherit;text-decoration:none}.toolbar{width:min(210mm,calc(100% - 24px));margin:14px auto 10px;display:flex;justify-content:space-between;align-items:center;gap:10px}.toolbar-group{display:flex;gap:8px}.btn{border:1px solid var(--line);border-radius:7px;padding:9px 13px;background:#fff;color:var(--navy);font-weight:700;font-size:12px;cursor:pointer}.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}.cv-page{width:210mm;min-height:297mm;margin:0 auto 28px;padding:6mm 7mm 5mm;background:var(--paper);box-shadow:0 16px 46px rgba(18,53,84,.16)}.header{display:grid;grid-template-columns:1fr 62mm;gap:6mm;padding:2.6mm 1mm 3mm;border-top:2.2mm solid var(--navy);border-bottom:.35mm solid var(--line)}h1{margin:0;color:var(--navy);font-size:21px;line-height:1.02;letter-spacing:-.3px}.headline{margin:1.2mm 0 0;font-size:8.9px;font-weight:700;letter-spacing:.115em;text-transform:uppercase;color:var(--navy2)}.contact{display:grid;grid-template-columns:1fr;align-content:start;gap:.45mm;font-size:7.2px;color:var(--muted);text-align:right}.contact a{font-weight:600}.profile{display:grid;grid-template-columns:15mm 1fr;gap:3.5mm;align-items:center;margin-top:2mm;padding:2.2mm 2.5mm;background:var(--soft);border:.3mm solid var(--line);border-radius:2.2mm}.portrait{width:15mm;height:20mm;object-fit:cover;object-position:center top;border-radius:1.8mm;border:.3mm solid #aebfce}.section-title{margin:0 0 1mm;padding-bottom:.75mm;border-bottom:.45mm solid var(--navy);font-size:8.9px;line-height:1;text-transform:uppercase;letter-spacing:.13em;color:var(--navy)}.profile .section-title{border:0;padding:0;margin:0 0 .6mm}.profile p{margin:0;font-size:6.75px;line-height:1.28;color:#34495d;text-align:justify}.content{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,.8fr);gap:4mm;margin-top:2mm}.right{border-left:.25mm solid var(--line);padding-left:3.2mm}.job{padding:.8mm 0;border-bottom:.2mm dashed #d7e0e7;break-inside:avoid}.job:last-child{border-bottom:0}.job-head{display:flex;justify-content:space-between;gap:2mm;align-items:flex-start}.job h3{margin:0;font-size:7.45px;line-height:1.08}.company{margin:.22mm 0 0;color:var(--muted);font-weight:700;font-size:6.65px}.date{white-space:nowrap;color:var(--navy2);font-size:6.35px;font-weight:700}.job ul{margin:.38mm 0 0;padding-left:2.75mm}.job li{margin:.11mm 0;font-size:6.15px;line-height:1.22;color:#34495d}.side-section{margin-bottom:1.65mm;padding-bottom:1.45mm;border-bottom:.2mm solid var(--line);break-inside:avoid}.side-section:last-child{border:0;margin:0;padding:0}.side-list{margin:0;padding-left:2.6mm}.side-list li,.side-section p{margin:0 0 .55mm;font-size:6.25px;line-height:1.24;color:#3e5266}.side-list li:last-child{margin-bottom:0}.side-section strong{color:var(--ink)}.skill{margin-bottom:.8mm}.skill:last-child{margin-bottom:0}.skill h3{margin:0 0 .18mm;font-size:6.2px;text-transform:uppercase;letter-spacing:.07em;color:var(--navy2)}.skill p{margin:0}.footer-note{margin-top:1.4mm;padding:1.2mm 2mm;text-align:center;background:var(--navy);color:#fff;border-radius:1.6mm;font-size:6.2px;font-weight:700;letter-spacing:.02em}.lang{display:flex;gap:4px;padding:3px;border:1px solid var(--line);border-radius:999px;background:#fff}.lang a{padding:5px 8px;border-radius:999px;font-size:11px;font-weight:700}.lang a.active{background:var(--navy);color:#fff}
+@media(max-width:900px){.cv-page{width:calc(100% - 20px);min-height:auto;padding:18px}.header,.content{grid-template-columns:1fr}.contact{text-align:left;grid-template-columns:repeat(2,minmax(0,1fr))}.right{border:0;padding:0}.profile{grid-template-columns:76px 1fr}.portrait{width:76px;height:100px}.profile p,.job li,.side-list li,.side-section p{font-size:12px}.job h3{font-size:14px}.company,.date{font-size:11px}.section-title{font-size:13px}.headline{font-size:12px}}
+@media(max-width:560px){.toolbar{align-items:stretch;flex-direction:column}.toolbar-group{display:grid;grid-template-columns:1fr 1fr}.btn{width:100%}.profile{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.header{gap:12px}}
+@media print{@page{size:A4 portrait;margin:0}html,body{width:210mm;height:297mm;background:#fff}.no-print{display:none!important}.cv-page{width:210mm;height:297mm;min-height:297mm;margin:0;padding:5mm 6mm 4mm;box-shadow:none;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}.header{padding-top:2mm}.profile{margin-top:1.8mm}.content{margin-top:1.8mm;gap:3.5mm}.footer-note{margin-top:1mm}}
+
+/* ATS and one-page print refinement */
+.profile p{font-size:8.05px;line-height:1.32}.footer-note{font-size:7.2px;line-height:1.2;padding:1.6mm 2mm;text-align:center;letter-spacing:.005em}.contact a{overflow-wrap:anywhere}@media print{.profile p{font-size:7.8px}.footer-note{font-size:6.9px;padding:1.3mm 2mm}article.cv-page{height:297mm;overflow:hidden}}
+
+/* Final print layout: keeps the desktop two-column Harvard design on A4. */
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body {
+    min-width: 210mm !important;
+    font-size: initial !important;
+  }
+
+  .no-print { display: none !important; }
+
+  .cv-page,
+  article.cv-page {
+    display: block !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 5mm 6mm 4mm !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 62mm !important;
+    gap: 6mm !important;
+    padding: 2mm 1mm 3mm !important;
+  }
+
+  h1 {
+    font-size: 21px !important;
+    line-height: 1.02 !important;
+  }
+
+  .headline {
+    margin-top: 1.2mm !important;
+    font-size: 8.9px !important;
+  }
+
+  .contact {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: .45mm !important;
+    text-align: right !important;
+    font-size: 7.2px !important;
+  }
+
+  .profile {
+    display: grid !important;
+    grid-template-columns: 15mm minmax(0, 1fr) !important;
+    gap: 3.5mm !important;
+    align-items: center !important;
+    margin-top: 1.8mm !important;
+    padding: 2.2mm 2.5mm !important;
+  }
+
+  .portrait {
+    width: 15mm !important;
+    height: 20mm !important;
+  }
+
+  .section-title {
+    margin: 0 0 1mm !important;
+    padding-bottom: .75mm !important;
+    font-size: 8.9px !important;
+    line-height: 1 !important;
+  }
+
+  .profile .section-title {
+    margin: 0 0 .6mm !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .profile p {
+    margin: 0 !important;
+    font-size: 7.8px !important;
+    line-height: 1.32 !important;
+  }
+
+  .content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, .8fr) !important;
+    gap: 3.5mm !important;
+    margin-top: 1.8mm !important;
+  }
+
+  main, aside, .right { min-width: 0 !important; }
+
+  .right {
+    border-left: .25mm solid var(--line) !important;
+    padding-left: 3.2mm !important;
+  }
+
+  .job {
+    padding: .8mm 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .job-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 2mm !important;
+  }
+
+  .job h3 {
+    font-size: 7.45px !important;
+    line-height: 1.08 !important;
+  }
+
+  .company {
+    margin: .22mm 0 0 !important;
+    font-size: 6.65px !important;
+  }
+
+  .date {
+    font-size: 6.35px !important;
+  }
+
+  .job ul {
+    margin: .38mm 0 0 !important;
+    padding-left: 2.75mm !important;
+  }
+
+  .job li {
+    margin: .11mm 0 !important;
+    font-size: 6.15px !important;
+    line-height: 1.22 !important;
+  }
+
+  .side-section {
+    margin-bottom: 1.65mm !important;
+    padding-bottom: 1.45mm !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .side-list {
+    margin: 0 !important;
+    padding-left: 2.6mm !important;
+  }
+
+  .side-list li,
+  .side-section p {
+    margin: 0 0 .55mm !important;
+    font-size: 6.25px !important;
+    line-height: 1.24 !important;
+  }
+
+  .skill { margin-bottom: .8mm !important; }
+  .skill h3 { margin: 0 0 .18mm !important; font-size: 6.2px !important; }
+  .skill p { margin: 0 !important; }
+
+  .footer-note {
+    margin-top: 1mm !important;
+    padding: 1.3mm 2mm !important;
+    font-size: 6.9px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+.projects{margin-top:4mm;border-top:.3mm solid var(--line);padding-top:2.5mm}
+.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:2mm;font-size:10px}
+.project-grid div{background:#f5f8fb;padding:6px;border-left:3px solid var(--navy);border-radius:4px}
+
+
+/* Professional final fusion: better page usage without sacrificing ATS readability */
+.profile{grid-template-columns:18mm 1fr;padding:2.6mm 3mm}
+.portrait{width:18mm;height:24mm}
+.profile p{font-size:7.45px;line-height:1.34}
+.content{grid-template-columns:minmax(0,1.62fr) minmax(0,.88fr);gap:4.2mm}
+.job{padding:1mm 0}
+.job h3{font-size:7.65px}.company{font-size:6.8px}.date{font-size:6.5px}.job li{font-size:6.35px;line-height:1.24}
+.side-section{margin-bottom:1.9mm;padding-bottom:1.65mm}
+.side-list li,.side-section p{font-size:6.45px;line-height:1.28}
+.skill h3{font-size:6.35px}.skill{margin-bottom:.95mm}
+.projects{margin-top:3mm;padding-top:2.2mm}
+.project-grid{gap:1.8mm;font-size:6.5px}
+.project-grid div{min-height:11mm;padding:1.6mm 1.8mm;border-left:.9mm solid var(--navy);border-radius:1.5mm;display:flex;flex-direction:column;justify-content:center}
+.project-grid strong{font-size:7px;color:var(--navy)}
+.project-grid span{color:var(--muted);line-height:1.2}
+.compact-list{margin:0;padding-left:3mm;display:grid;gap:.45mm}
+.compact-list li{font-size:6.35px;line-height:1.2;color:#3e5266}
+.objective p{margin:0}
+.footer-note{padding:1.55mm 2mm;font-size:6.6px}
+
+@media print{
+  .profile{grid-template-columns:18mm minmax(0,1fr)!important;padding:2.6mm 3mm!important}
+  .portrait{width:18mm!important;height:24mm!important}
+  .profile p{font-size:7.25px!important;line-height:1.32!important}
+  .content{grid-template-columns:minmax(0,1.62fr) minmax(0,.88fr)!important;gap:4mm!important}
+  .job{padding:.95mm 0!important}
+  .job h3{font-size:7.55px!important}.company{font-size:6.7px!important}.date{font-size:6.4px!important}.job li{font-size:6.25px!important;line-height:1.22!important}
+  .side-section{margin-bottom:1.8mm!important;padding-bottom:1.55mm!important}
+  .side-list li,.side-section p{font-size:6.35px!important;line-height:1.25!important}
+  .projects{margin-top:2.5mm!important;padding-top:2mm!important}
+  .project-grid{gap:1.6mm!important;font-size:6.35px!important}
+  .project-grid div{min-height:10.5mm!important;padding:1.45mm 1.7mm!important}
+  .project-grid strong{font-size:6.85px!important}
+  .compact-list li{font-size:6.25px!important}
+  .footer-note{margin-top:1.2mm!important;padding:1.4mm 2mm!important;font-size:6.45px!important}
+}
+
+.profile p{line-height:1.5}.highlights{margin:10px 0}.highlights ul{columns:2;gap:20px}.header h1{font-size:34px}.headline{font-size:15px}
+
+/* Final hierarchy refinements */
+.header{grid-template-columns:minmax(0,1fr) 58mm;row-gap:1.2mm}
+.header>div:first-child{min-width:0}
+.header h1{font-size:22px;line-height:1.05;white-space:nowrap;letter-spacing:-.02em}
+.headline{grid-column:1/-1;margin-top:.8mm;font-size:8px;line-height:1.1;white-space:nowrap;letter-spacing:.105em}
+.profile{align-items:start;padding:3mm 3.2mm}
+.profile .section-title{font-size:10.2px;letter-spacing:.15em;margin-bottom:1.1mm}
+.profile p{font-size:7.9px;line-height:1.42;text-align:left}
+.highlights{margin:2.2mm 0 1.8mm}
+.highlights .section-title{font-size:8.8px;margin-bottom:1.2mm}
+.specialty-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4mm}
+.specialty-grid>div{min-height:9.5mm;padding:1.6mm 1.8mm;background:var(--soft);border-left:.8mm solid var(--navy);border-radius:1.4mm;display:flex;flex-direction:column;justify-content:center}
+.specialty-grid strong{font-size:7px;line-height:1.15;color:var(--navy)}
+.specialty-grid span{margin-top:.5mm;font-size:6.25px;line-height:1.2;color:var(--muted)}
+
+@media(max-width:900px){
+  .header h1{font-size:28px;white-space:normal}
+  .headline{grid-column:auto;white-space:normal;font-size:11px}
+  .specialty-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .profile .section-title{font-size:14px}
+  .profile p{font-size:12px}
+}
+@media(max-width:560px){.specialty-grid{grid-template-columns:1fr}}
+
+@media print{
+  .header{grid-template-columns:minmax(0,1fr) 58mm!important;row-gap:1.1mm!important}
+  .header h1{font-size:21px!important;line-height:1.04!important;white-space:nowrap!important;letter-spacing:-.02em!important}
+  .headline{grid-column:1/-1!important;margin-top:.7mm!important;font-size:7.7px!important;line-height:1.05!important;white-space:nowrap!important;letter-spacing:.095em!important}
+  .profile{align-items:start!important;padding:2.8mm 3mm!important}
+  .profile .section-title{font-size:9.8px!important;letter-spacing:.14em!important;margin-bottom:1mm!important}
+  .profile p{font-size:7.65px!important;line-height:1.38!important;text-align:left!important}
+  .highlights{margin:2mm 0 1.6mm!important}
+  .highlights .section-title{font-size:8.6px!important;margin-bottom:1mm!important}
+  .specialty-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:1.2mm!important}
+  .specialty-grid>div{min-height:8.8mm!important;padding:1.35mm 1.55mm!important}
+  .specialty-grid strong{font-size:6.75px!important}
+  .specialty-grid span{font-size:6px!important;line-height:1.16!important}
+}
+
+
+/* === FINAL V3: readable, balanced and identical ES/EN layout === */
+.cv-page{padding:7mm 8mm 6mm}
+.header{grid-template-columns:minmax(0,1fr) 56mm;gap:4mm;padding:2.8mm 1.5mm 3.5mm}
+.header h1{font-size:24px;line-height:1.04;white-space:nowrap}
+.headline{font-size:8.25px;line-height:1.15;letter-spacing:.085em;white-space:nowrap}
+.contact{font-size:7.6px;line-height:1.25;gap:.55mm}
+.profile{grid-template-columns:20mm minmax(0,1fr);gap:4mm;margin-top:2.6mm;padding:3.4mm 3.6mm}
+.portrait{width:20mm;height:27mm}
+.profile .section-title{font-size:11px;line-height:1.05;margin-bottom:1.4mm;letter-spacing:.14em}
+.profile p{font-size:8.65px;line-height:1.48;color:#2d4256;text-align:left}
+.highlights{margin:2.8mm 0 2.4mm}
+.highlights .section-title{font-size:9.5px;margin-bottom:1.4mm}
+.specialty-grid{gap:1.8mm}
+.specialty-grid>div{min-height:11.5mm;padding:2mm 2.1mm}
+.specialty-grid strong{font-size:7.7px;line-height:1.18}
+.specialty-grid span{font-size:6.85px;line-height:1.25;margin-top:.7mm}
+.content{grid-template-columns:minmax(0,1.58fr) minmax(0,.92fr);gap:4.5mm;margin-top:2.3mm}
+.section-title{font-size:9.5px;line-height:1.05;margin-bottom:1.2mm;padding-bottom:.9mm}
+.right{padding-left:3.6mm}
+.job{padding:1.25mm 0}
+.job h3{font-size:8.2px;line-height:1.12}
+.company{font-size:7.2px;line-height:1.15;margin-top:.3mm}
+.date{font-size:6.9px}
+.job ul{margin:.6mm 0 0;padding-left:3.2mm}
+.job li{font-size:6.9px;line-height:1.3;margin:.2mm 0}
+.side-section{margin-bottom:2.2mm;padding-bottom:1.9mm}
+.side-list{padding-left:3mm}
+.side-list li,.side-section p{font-size:6.95px;line-height:1.32;margin-bottom:.75mm}
+.skill{margin-bottom:1.1mm}
+.skill h3{font-size:6.9px;margin-bottom:.25mm}
+.compact-list{gap:.65mm;padding-left:3.2mm}
+.compact-list li{font-size:6.85px;line-height:1.27}
+.projects{margin-top:3.5mm;padding-top:2.6mm}
+.project-grid{gap:2mm;font-size:7.1px}
+.project-grid div{min-height:13mm;padding:2mm 2.2mm}
+.project-grid strong{font-size:7.8px}
+.project-grid span{font-size:6.8px;line-height:1.25;margin-top:.5mm}
+.footer-note{margin-top:2mm;padding:1.8mm 2.2mm;font-size:7px;line-height:1.2}
+
+@media print{
+  .cv-page,article.cv-page{padding:6mm 7mm 5mm!important}
+  .header{grid-template-columns:minmax(0,1fr) 56mm!important;gap:4mm!important;padding:2.4mm 1.2mm 3mm!important}
+  .header h1{font-size:23px!important;line-height:1.04!important;white-space:nowrap!important}
+  .headline{font-size:8px!important;line-height:1.12!important;letter-spacing:.08em!important;white-space:nowrap!important}
+  .contact{font-size:7.3px!important;line-height:1.22!important;gap:.45mm!important}
+  .profile{grid-template-columns:19mm minmax(0,1fr)!important;gap:3.6mm!important;margin-top:2.2mm!important;padding:3mm 3.2mm!important}
+  .portrait{width:19mm!important;height:25.5mm!important}
+  .profile .section-title{font-size:10.5px!important;line-height:1.05!important;margin-bottom:1.2mm!important}
+  .profile p{font-size:8.25px!important;line-height:1.42!important}
+  .highlights{margin:2.4mm 0 2mm!important}
+  .highlights .section-title{font-size:9.2px!important;margin-bottom:1.2mm!important}
+  .specialty-grid{gap:1.5mm!important}
+  .specialty-grid>div{min-height:10.5mm!important;padding:1.7mm 1.8mm!important}
+  .specialty-grid strong{font-size:7.4px!important}
+  .specialty-grid span{font-size:6.55px!important;line-height:1.2!important}
+  .content{grid-template-columns:minmax(0,1.58fr) minmax(0,.92fr)!important;gap:4.2mm!important;margin-top:2mm!important}
+  .section-title{font-size:9.15px!important;line-height:1.05!important;margin-bottom:1.05mm!important;padding-bottom:.8mm!important}
+  .right{padding-left:3.4mm!important}
+  .job{padding:1.05mm 0!important}
+  .job h3{font-size:7.85px!important;line-height:1.1!important}
+  .company{font-size:6.95px!important;margin-top:.25mm!important}
+  .date{font-size:6.65px!important}
+  .job ul{margin:.5mm 0 0!important;padding-left:3mm!important}
+  .job li{font-size:6.6px!important;line-height:1.26!important;margin:.16mm 0!important}
+  .side-section{margin-bottom:1.95mm!important;padding-bottom:1.7mm!important}
+  .side-list{padding-left:2.8mm!important}
+  .side-list li,.side-section p{font-size:6.65px!important;line-height:1.28!important;margin-bottom:.65mm!important}
+  .skill{margin-bottom:.95mm!important}
+  .skill h3{font-size:6.6px!important;margin-bottom:.2mm!important}
+  .compact-list li{font-size:6.55px!important;line-height:1.24!important}
+  .projects{margin-top:3mm!important;padding-top:2.3mm!important}
+  .project-grid{gap:1.7mm!important;font-size:6.8px!important}
+  .project-grid div{min-height:12mm!important;padding:1.8mm 2mm!important}
+  .project-grid strong{font-size:7.5px!important}
+  .project-grid span{font-size:6.55px!important;line-height:1.22!important}
+  .footer-note{margin-top:1.6mm!important;padding:1.6mm 2mm!important;font-size:6.75px!important}
+}
+
+
+/* === ATS FINAL: experience-first, no project cards, balanced A4 === */
+.highlights{margin:0}
+.expertise-side{margin-bottom:2.5mm;padding-bottom:2mm}
+.expertise-list li{margin-bottom:1.15mm}
+.expertise-list li:last-child{margin-bottom:0}
+.expertise-list strong{font-size:7.4px;color:var(--navy)}
+.content{grid-template-columns:minmax(0,1.72fr) minmax(0,.78fr);gap:5mm;margin-top:3mm}
+.right{padding-left:4mm}
+.job{padding:1.65mm 0}
+.job h3{font-size:9px;line-height:1.12}
+.company{font-size:7.8px;margin-top:.35mm}
+.date{font-size:7.25px}
+.job ul{margin:.8mm 0 0;padding-left:3.5mm}
+.job li{font-size:7.55px;line-height:1.36;margin:.3mm 0}
+.side-section{margin-bottom:2.7mm;padding-bottom:2.2mm}
+.side-list li,.side-section p{font-size:7.25px;line-height:1.34;margin-bottom:1mm}
+.skill{margin-bottom:1.25mm}.skill h3{font-size:7.25px}.skill p{font-size:7.05px;line-height:1.3}
+.section-title{font-size:10px;margin-bottom:1.35mm}
+.profile{margin-top:2.8mm;padding:3.6mm 3.8mm;grid-template-columns:21mm minmax(0,1fr)}
+.portrait{width:21mm;height:28mm}
+.profile .section-title{font-size:11.2px}
+.profile p{font-size:8.8px;line-height:1.5}
+.footer-note{margin-top:3mm;font-size:7.2px;padding:1.9mm 2mm}
+
+@media print{
+ .content{grid-template-columns:minmax(0,1.72fr) minmax(0,.78fr)!important;gap:4.6mm!important;margin-top:2.7mm!important}
+ .right{padding-left:3.7mm!important}
+ .job{padding:1.45mm 0!important}
+ .job h3{font-size:8.55px!important}.company{font-size:7.45px!important}.date{font-size:7px!important}
+ .job ul{margin:.7mm 0 0!important;padding-left:3.3mm!important}
+ .job li{font-size:7.15px!important;line-height:1.32!important;margin:.24mm 0!important}
+ .side-section{margin-bottom:2.35mm!important;padding-bottom:1.95mm!important}
+ .side-list li,.side-section p{font-size:6.95px!important;line-height:1.31!important;margin-bottom:.85mm!important}
+ .expertise-list strong{font-size:7.1px!important}
+ .skill{margin-bottom:1.05mm!important}.skill h3{font-size:6.95px!important}.skill p{font-size:6.8px!important;line-height:1.27!important}
+ .section-title{font-size:9.55px!important;margin-bottom:1.2mm!important}
+ .profile{margin-top:2.4mm!important;padding:3.2mm 3.4mm!important;grid-template-columns:20mm minmax(0,1fr)!important}
+ .portrait{width:20mm!important;height:26.7mm!important}
+ .profile .section-title{font-size:10.8px!important}
+ .profile p{font-size:8.4px!important;line-height:1.44!important}
+ .footer-note{margin-top:2.5mm!important;font-size:6.9px!important;padding:1.7mm 2mm!important}
+}
+
+
+/* === FINAL 10/10: clean header + restored value block === */
+.header{
+  grid-template-columns:minmax(0,1fr) 48mm;
+  gap:5mm;
+  align-items:start;
+  padding:2.6mm 1.5mm 3.2mm;
+}
+.header>div:first-child{min-width:0;padding-right:1mm}
+.header h1{font-size:22px;line-height:1.05;white-space:nowrap;letter-spacing:-.025em;margin:0 0 .8mm}
+.headline{font-size:7.15px;line-height:1.18;letter-spacing:.075em;white-space:nowrap;margin:0;color:var(--navy2);font-weight:800}
+.contact{font-size:6.65px;line-height:1.22;gap:.35mm;padding-top:.2mm;min-width:0}
+.contact a,.contact span{display:block;max-width:100%;overflow-wrap:anywhere}
+.bring-list{padding-left:3mm}
+.bring-list li{margin-bottom:.75mm}
+.bring-section{margin-bottom:2.35mm}
+
+@media print{
+  .header{grid-template-columns:minmax(0,1fr) 48mm!important;gap:4.5mm!important;padding:2.3mm 1.2mm 2.8mm!important}
+  .header h1{font-size:21px!important;line-height:1.04!important;white-space:nowrap!important;margin-bottom:.65mm!important}
+  .headline{font-size:6.85px!important;line-height:1.15!important;letter-spacing:.068em!important;white-space:nowrap!important}
+  .contact{font-size:6.35px!important;line-height:1.18!important;gap:.3mm!important;padding-top:0!important}
+  .bring-list li{font-size:6.85px!important;line-height:1.28!important;margin-bottom:.65mm!important}
+}
+
+@media(max-width:900px){
+ .header{grid-template-columns:1fr;gap:10px}
+ .header h1{font-size:28px;white-space:normal}
+ .headline{font-size:11px;white-space:normal}
+ .contact{font-size:11px}
+}
+
+/* === FINAL READABILITY PASS: larger print, balanced columns, footer at true page bottom === */
+.cv-page{position:relative;padding-bottom:15mm}
+.content{grid-template-columns:minmax(0,1.66fr) minmax(0,.84fr);gap:4.6mm;margin-top:3.2mm}
+.right{padding-left:3.8mm}
+.job{padding:1.95mm 0}
+.job h3{font-size:9.6px;line-height:1.16}
+.company{font-size:8.25px;line-height:1.18;margin-top:.4mm}
+.date{font-size:7.65px}
+.job ul{margin:1mm 0 0;padding-left:3.7mm}
+.job li{font-size:8.05px;line-height:1.42;margin:.38mm 0}
+.side-section{margin-bottom:3.1mm;padding-bottom:2.55mm}
+.side-list li,.side-section p{font-size:7.75px;line-height:1.4;margin-bottom:1.15mm}
+.expertise-list li,.bring-list li{margin-bottom:1.25mm}
+.expertise-list strong{font-size:8px}
+.skill{margin-bottom:1.45mm}
+.skill h3{font-size:7.7px;line-height:1.2;margin-bottom:.35mm}
+.skill p{font-size:7.55px;line-height:1.36}
+.section-title{font-size:10.5px;margin-bottom:1.55mm;padding-bottom:1mm}
+.profile{margin-top:3mm;padding:3.8mm 4mm;grid-template-columns:21mm minmax(0,1fr)}
+.profile .section-title{font-size:11.4px}
+.profile p{font-size:9px;line-height:1.52}
+.footer-note{position:absolute;left:7mm;right:7mm;bottom:5mm;margin:0;font-size:7.35px;padding:1.8mm 2mm}
+
+@media print{
+  .cv-page{position:relative!important;padding:5mm 6mm 15mm!important}
+  .content{grid-template-columns:minmax(0,1.66fr) minmax(0,.84fr)!important;gap:4.3mm!important;margin-top:3mm!important}
+  .right{padding-left:3.5mm!important}
+  .job{padding:1.8mm 0!important}
+  .job h3{font-size:9.15px!important;line-height:1.14!important}
+  .company{font-size:7.9px!important;line-height:1.16!important;margin-top:.35mm!important}
+  .date{font-size:7.4px!important}
+  .job ul{margin:.9mm 0 0!important;padding-left:3.5mm!important}
+  .job li{font-size:7.7px!important;line-height:1.38!important;margin:.32mm 0!important}
+  .side-section{margin-bottom:2.75mm!important;padding-bottom:2.25mm!important}
+  .side-list li,.side-section p{font-size:7.45px!important;line-height:1.36!important;margin-bottom:1mm!important}
+  .expertise-list li,.bring-list li{margin-bottom:1.05mm!important}
+  .expertise-list strong{font-size:7.7px!important}
+  .skill{margin-bottom:1.25mm!important}
+  .skill h3{font-size:7.45px!important;line-height:1.18!important;margin-bottom:.3mm!important}
+  .skill p{font-size:7.25px!important;line-height:1.32!important}
+  .section-title{font-size:10.1px!important;margin-bottom:1.4mm!important;padding-bottom:.9mm!important}
+  .profile{margin-top:2.7mm!important;padding:3.5mm 3.7mm!important;grid-template-columns:20mm minmax(0,1fr)!important}
+  .profile .section-title{font-size:11px!important}
+  .profile p{font-size:8.65px!important;line-height:1.48!important}
+  .footer-note{position:absolute!important;left:6mm!important;right:6mm!important;bottom:4mm!important;margin:0!important;font-size:7.05px!important;padding:1.65mm 2mm!important}
+}
+
+
+/* === FINAL EXPERIENCE COMPLETE: restored detail from previous CV === */
+.job{padding:1.35mm 0}
+.job h3{font-size:9.2px}
+.company{font-size:7.8px}
+.date{font-size:7.2px}
+.job ul{margin:.65mm 0 0;padding-left:3.5mm}
+.job li{font-size:7.35px;line-height:1.31;margin:.18mm 0}
+@media print{
+ .job{padding:1.05mm 0!important}
+ .job h3{font-size:8.65px!important}
+ .company{font-size:7.35px!important}
+ .date{font-size:6.9px!important}
+ .job ul{margin:.5mm 0 0!important;padding-left:3.2mm!important}
+ .job li{font-size:6.85px!important;line-height:1.25!important;margin:.1mm 0!important}
+}
+
+
+/* === FINAL 10/10 PASS: licence visibility + crisp, readable A4 print === */
+.contact .license{display:block;color:var(--ink);font-size:7.7px;line-height:1.2;margin-bottom:.35mm;white-space:nowrap}
+.contact .license strong{color:var(--navy);font-weight:800}
+.portrait{image-rendering:auto}
+@media print{
+  html,body,.cv-page{-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+  .contact .license{font-size:7.25px!important;line-height:1.18!important;margin-bottom:.3mm!important}
+  .job{padding:1.35mm 0!important}
+  .job h3{font-size:9.15px!important;line-height:1.14!important}
+  .company{font-size:7.8px!important;line-height:1.16!important}
+  .date{font-size:7.3px!important}
+  .job ul{margin:.65mm 0 0!important;padding-left:3.45mm!important}
+  .job li{font-size:7.45px!important;line-height:1.31!important;margin:.17mm 0!important}
+  .side-list li,.side-section p{font-size:7.55px!important;line-height:1.34!important}
+  .skill h3{font-size:7.55px!important}.skill p{font-size:7.35px!important;line-height:1.3!important}
+  .expertise-list strong{font-size:7.8px!important}
+  .bring-list li{font-size:7.45px!important;line-height:1.3!important}
+}
+
+/* Responsive web final del CV integrado (impresión permanece A4) */
+@media screen and (max-width: 900px) {
+  body { overflow-x: hidden; }
+  .cv-page { width: min(100% - 20px, 760px); height: auto; min-height: 0; margin: 10px auto 28px; padding: 18px; overflow: visible; }
+  .header { grid-template-columns: 1fr; gap: 12px; }
+  .contact { text-align: left; }
+  .profile { grid-template-columns: 92px minmax(0,1fr); gap: 16px; }
+  .portrait { width: 92px; height: 122px; }
+  .content { grid-template-columns: 1fr; gap: 18px; }
+  .right { border-left: 0; padding-left: 0; }
+  .profile p, .job li, .side-list li, .side-section p { font-size: 12px; line-height: 1.5; }
+  .job h3 { font-size: 15px; }
+  .company, .date { font-size: 11.5px; }
+  .section-title { font-size: 13px; }
+  .headline { white-space: normal; font-size: 11px; line-height: 1.4; }
+}
+@media screen and (max-width: 560px) {
+  .toolbar { position: static; flex-direction: column; align-items: stretch; gap: 8px; padding: 10px; }
+  .toolbar-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .btn { width: 100%; }
+  .cv-page { width: calc(100% - 12px); margin: 6px auto 18px; padding: 14px 12px; }
+  .name { font-size: clamp(24px, 8vw, 34px); }
+  .profile { grid-template-columns: 1fr; }
+  .portrait { width: 96px; height: 128px; }
+  .contact { grid-template-columns: 1fr; }
+  .footer-note { position: static !important; margin-top: 14px; }
+}
+
+
+/* ===== FINAL DEPLOYMENT POLISH ===== */
+/* Four-card layout on desktop; responsive on smaller screens. */
+.education-grid,
+.training-grid,
+.certificates-grid,
+.certifications-grid,
+.formacion-grid,
+.certificados-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  align-items: stretch;
+}
+.education-grid > *,
+.training-grid > *,
+.certificates-grid > *,
+.certifications-grid > *,
+.formacion-grid > *,
+.certificados-grid > * {
+  min-width: 0;
+  height: 100%;
+}
+@media (max-width: 1050px) {
+  .education-grid,
+  .training-grid,
+  .certificates-grid,
+  .certifications-grid,
+  .formacion-grid,
+  .certificados-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  .education-grid,
+  .training-grid,
+  .certificates-grid,
+  .certifications-grid,
+  .formacion-grid,
+  .certificados-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
