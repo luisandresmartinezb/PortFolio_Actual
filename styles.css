@@ -1246,3 +1246,71 @@ a, p, li, h1, h2, h3, h4, span { overflow-wrap: break-word; }
   .education-image{height:240px;flex-basis:240px;}
   .education-card{height:auto;}
 }
+
+
+/* =========================================================
+   RESPONSIVE FINAL — MÓVIL / TABLET
+   Corrige solapes, escalado del hero, fotografía, tarjetas y
+   navegación sin alterar la versión de escritorio.
+========================================================= */
+@media (max-width: 760px) {
+  html { scroll-padding-top: 70px; }
+  body { overflow-x: hidden; }
+  .site-header { position: sticky; top: 0; z-index: 100; }
+  .nav { min-height: 64px; }
+  .hero { padding: 34px 0 56px !important; gap: 28px !important; align-items: start; }
+  .hero-copy { width: 100%; }
+  .availability { margin-top: 0; max-width: 100%; white-space: normal; }
+  .kicker { margin: 16px 0 12px; line-height: 1.45; }
+  .hero h1 {
+    margin: 0 0 18px !important;
+    font-size: clamp(38px, 10.8vw, 50px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.045em !important;
+    max-width: none !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+  .hero h1 br { display: none; }
+  .hero h1 span { display: block; margin-top: 4px; }
+  .intro { font-size: 15.5px !important; line-height: 1.68 !important; max-width: none; }
+  .actions { grid-template-columns: 1fr !important; }
+  .facts { grid-template-columns: repeat(3, minmax(0,1fr)) !important; gap: 8px !important; margin-top: 28px !important; }
+  .facts div { min-width: 0; padding: 12px 6px !important; text-align: center; border-bottom: 0 !important; border-right: 1px solid var(--line); }
+  .facts div:last-child { border-right: 0; }
+  .facts strong { font-size: 14px; line-height: 1.2; overflow-wrap: anywhere; }
+  .facts span { font-size: 10.5px; line-height: 1.3; }
+  .portrait { width: min(78vw, 300px) !important; justify-self: center !important; }
+  .portrait img { height: auto !important; aspect-ratio: 4/5 !important; object-fit: cover !important; }
+  .portrait figcaption { text-align: center !important; font-size: 11px !important; line-height: 1.45; }
+  .section, .contact { scroll-margin-top: 70px; }
+  .compact-header, .split, .projects-header, .featured-project, .current-panel { grid-template-columns: 1fr !important; }
+  .focus-grid, .skills-grid-six, .education-grid, .projects-grid, .cert-grid, .contact-grid { grid-template-columns: 1fr !important; }
+  .education-card { height: auto !important; }
+  .education-image { height: 220px !important; flex-basis: 220px !important; }
+  .project-card, .focus-card, .skill-card, .contact-card, .education-card { min-width: 0 !important; }
+  .project-image img { width: 100%; height: auto; max-height: none; object-fit: cover; }
+}
+
+@media (max-width: 430px) {
+  .container { width: calc(100% - 22px) !important; }
+  .nav { min-height: 60px; }
+  .nav-links { top: 60px !important; max-height: calc(100dvh - 60px) !important; }
+  .brand { max-width: calc(100vw - 104px) !important; font-size: 13.5px !important; }
+  .hero { padding-top: 28px !important; }
+  .hero h1 { font-size: clamp(34px, 10.4vw, 44px) !important; }
+  .intro { font-size: 15px !important; }
+  .facts { grid-template-columns: 1fr !important; }
+  .facts div { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; text-align: left; padding: 11px 0 !important; }
+  .facts div:last-child { border-bottom: 0 !important; }
+  .facts strong { font-size: 15px; }
+  .facts span { font-size: 11px; }
+  .portrait { width: min(82vw, 280px) !important; }
+  .section { padding: 52px 0 !important; }
+  .section h2, .contact h2 { font-size: clamp(30px, 9vw, 38px) !important; }
+  .projects-header h2 { font-size: clamp(34px, 10vw, 44px) !important; }
+  .featured-project { padding: 12px !important; }
+  .featured-project .project-image, .featured-visual { min-height: 190px !important; }
+  .education-image { height: 200px !important; flex-basis: 200px !important; }
+  .email-provider-actions, .contact-actions-inline { grid-template-columns: 1fr !important; }
+}

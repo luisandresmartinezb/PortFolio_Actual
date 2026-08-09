@@ -546,45 +546,28 @@
 }
 
 
-/* ===== FINAL DEPLOYMENT POLISH ===== */
-/* Four-card layout on desktop; responsive on smaller screens. */
-.education-grid,
-.training-grid,
-.certificates-grid,
-.certifications-grid,
-.formacion-grid,
-.certificados-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 1rem !important;
-  align-items: stretch;
-}
-.education-grid > *,
-.training-grid > *,
-.certificates-grid > *,
-.certifications-grid > *,
-.formacion-grid > *,
-.certificados-grid > * {
-  min-width: 0;
-  height: 100%;
-}
-@media (max-width: 1050px) {
-  .education-grid,
-  .training-grid,
-  .certificates-grid,
-  .certifications-grid,
-  .formacion-grid,
-  .certificados-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
-@media (max-width: 640px) {
-  .education-grid,
-  .training-grid,
-  .certificates-grid,
-  .certifications-grid,
-  .formacion-grid,
-  .certificados-grid {
-    grid-template-columns: 1fr !important;
-  }
+
+
+/* =========================================================
+   IMPRESIÓN FINAL A4 — LEGIBILIDAD
+   Mantiene una sola página, pero aumenta el cuerpo de texto
+   y reduce espacios secundarios antes de reducir la fuente.
+========================================================= */
+@media print {
+  .cv-page { padding: 4.5mm 5.5mm 13mm !important; }
+  .profile { margin-top: 2.2mm !important; padding: 3mm 3.3mm !important; }
+  .profile p { font-size: 8.9px !important; line-height: 1.40 !important; }
+  .content { gap: 3.8mm !important; margin-top: 2.2mm !important; }
+  .section-title { font-size: 10.3px !important; margin-bottom: 1.15mm !important; }
+  .job { padding: 1.05mm 0 !important; }
+  .job h3 { font-size: 9.25px !important; }
+  .company { font-size: 7.9px !important; }
+  .date { font-size: 7.35px !important; }
+  .job ul { margin-top: .45mm !important; }
+  .job li { font-size: 7.55px !important; line-height: 1.27 !important; margin: .08mm 0 !important; }
+  .side-section { margin-bottom: 1.9mm !important; padding-bottom: 1.55mm !important; }
+  .side-list li, .side-section p { font-size: 7.6px !important; line-height: 1.30 !important; margin-bottom: .6mm !important; }
+  .skill h3 { font-size: 7.7px !important; }
+  .skill p { font-size: 7.45px !important; line-height: 1.28 !important; }
+  .footer-note { font-size: 7.05px !important; }
 }
