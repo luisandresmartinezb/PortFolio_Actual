@@ -2239,3 +2239,16 @@ a, p, li, h1, h2, h3, h4, span { overflow-wrap: break-word; }
     font-size: clamp(30px, 9vw, 40px);
   }
 }
+
+/* =========================================================
+   FIX FINAL FOTO HERO — ESCRITORIO
+   La imagen debe ocupar todo el ancho de su tarjeta.
+   Evita la franja lateral causada por el max-width de 390px.
+========================================================= */
+@media (min-width: 1280px) {
+  .portrait img,
+  .portrait figcaption {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
