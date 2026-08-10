@@ -1314,3 +1314,928 @@ a, p, li, h1, h2, h3, h4, span { overflow-wrap: break-word; }
   .education-image { height: 200px !important; flex-basis: 200px !important; }
   .email-provider-actions, .contact-actions-inline { grid-template-columns: 1fr !important; }
 }
+
+/* ===== MOBILE REAL FIX 2026 ===== */
+
+/* ===== MOBILE REAL FIX 2026 =====
+   Solo se aplica a teléfonos. Escritorio y tablet quedan intactos.
+   Objetivo: evitar el "desktop apilado", reducir alturas y mejorar lectura. */
+@media (max-width: 560px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .container {
+    width: calc(100% - 28px) !important;
+    max-width: none !important;
+    margin-inline: auto;
+  }
+
+  /* Header móvil compacto y sin tapar contenido */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav {
+    min-height: 58px !important;
+  }
+
+  .brand {
+    font-size: 14px !important;
+    max-width: calc(100vw - 96px) !important;
+  }
+
+  .menu-toggle,
+  .theme-toggle {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .nav-links {
+    top: 58px !important;
+    max-height: calc(100dvh - 58px) !important;
+  }
+
+  /* HERO: compacto y realmente móvil */
+  .hero {
+    min-height: 0 !important;
+    padding: 26px 0 42px !important;
+    gap: 24px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10vw, 44px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.035em !important;
+    margin: 0 0 14px !important;
+    max-width: 100% !important;
+  }
+
+  .hero h1 br {
+    display: none !important;
+  }
+
+  .hero h1 span {
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  .intro {
+    font-size: 15px !important;
+    line-height: 1.58 !important;
+    margin: 0 !important;
+  }
+
+  .actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 9px !important;
+    margin-top: 20px !important;
+  }
+
+  .actions .button {
+    width: 100% !important;
+    min-height: 43px !important;
+    padding: 10px 8px !important;
+    font-size: 13px !important;
+  }
+
+  .facts {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    margin-top: 28px !important;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .facts div {
+    min-height: 64px !important;
+    padding: 12px 4px !important;
+    text-align: center !important;
+    border: 0 !important;
+    border-right: 1px solid var(--line) !important;
+  }
+
+  .facts div:last-child {
+    border-right: 0 !important;
+  }
+
+  .facts strong {
+    font-size: 14px !important;
+    line-height: 1.15 !important;
+  }
+
+  .facts span {
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .portrait {
+    width: min(72vw, 245px) !important;
+    margin-inline: auto !important;
+  }
+
+  .portrait img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+  }
+
+  .portrait figcaption {
+    padding: 10px !important;
+    font-size: 10.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Secciones: menos aire vertical */
+  .section,
+  .projects-section,
+  .contact {
+    padding-block: 44px !important;
+  }
+
+  .compact-header,
+  .education-header,
+  .projects-header {
+    display: block !important;
+    margin-bottom: 22px !important;
+  }
+
+  .compact-header > p,
+  .education-header > p,
+  .projects-intro {
+    margin-top: 12px !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .section h2,
+  .contact h2,
+  .projects-header h2 {
+    font-size: clamp(28px, 8.4vw, 36px) !important;
+    line-height: 1.08 !important;
+  }
+
+  /* MI ENFOQUE: tarjetas compactas, no media pantalla */
+  .focus-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .focus-card {
+    display: grid !important;
+    grid-template-columns: 46px minmax(0, 1fr) !important;
+    grid-template-areas:
+      "icon title"
+      "icon copy";
+    column-gap: 12px !important;
+    row-gap: 4px !important;
+    min-height: 0 !important;
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .focus-icon {
+    grid-area: icon;
+    min-width: 42px !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin: 0 !important;
+    align-self: start;
+  }
+
+  .focus-card h3 {
+    grid-area: title;
+    margin: 1px 0 2px !important;
+    font-size: 17px !important;
+    line-height: 1.2 !important;
+  }
+
+  .focus-card p {
+    grid-area: copy;
+    font-size: 13.5px !important;
+    line-height: 1.48 !important;
+  }
+
+  /* CONOCIMIENTOS: bloques compactos */
+  .skills-grid,
+  .skills-grid-six {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .skill-card {
+    min-height: 0 !important;
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .skill-card h3 {
+    margin: 5px 0 10px !important;
+    font-size: 18px !important;
+  }
+
+  .skill-tags {
+    gap: 7px !important;
+  }
+
+  .skill-tags span,
+  .method-tags span {
+    padding: 6px 9px !important;
+    font-size: 11.5px !important;
+  }
+
+  .method-card {
+    display: block !important;
+    padding: 14px !important;
+  }
+
+  /* FORMACIÓN: miniatura + texto, no certificado gigante */
+  .education-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .education-card {
+    display: grid !important;
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    border-radius: 16px !important;
+  }
+
+  .education-image {
+    width: 112px !important;
+    height: 100% !important;
+    min-height: 150px !important;
+    max-height: 180px !important;
+    padding: 8px !important;
+    flex: none !important;
+  }
+
+  .education-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .education-image > span {
+    right: 6px !important;
+    bottom: 6px !important;
+    padding: 4px 6px !important;
+    font-size: 9px !important;
+  }
+
+  .education-content {
+    padding: 13px !important;
+    min-width: 0 !important;
+  }
+
+  .education-year {
+    margin-bottom: 5px !important;
+    font-size: 10px !important;
+  }
+
+  .education-content h3 {
+    margin: 0 0 6px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+  }
+
+  .education-content > p:not(.education-year) {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  .daw-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  .daw-card .education-content {
+    padding: 14px !important;
+  }
+
+  /* Proyectos */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .project-card {
+    min-height: 0 !important;
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .project-card h3 {
+    font-size: 19px !important;
+  }
+
+  .project-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 210px !important;
+    object-fit: cover !important;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr !important;
+    padding: 10px !important;
+  }
+
+  .featured-project .project-image,
+  .featured-visual {
+    min-height: 180px !important;
+  }
+
+  /* Experiencia */
+  .timeline article {
+    display: block !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .timeline time {
+    display: block !important;
+    margin-bottom: 4px !important;
+    font-size: 11px !important;
+  }
+
+  .timeline h3 {
+    font-size: 17px !important;
+  }
+
+  .timeline p,
+  .timeline li {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Contacto */
+  .contact-grid,
+  .cert-grid,
+  .contact-actions-inline,
+  .email-provider-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-card,
+  .cert-card {
+    min-height: 0 !important;
+  }
+
+  .cert-card img {
+    height: 150px !important;
+    object-fit: contain !important;
+  }
+
+  /* Evitar cualquier corte horizontal */
+  img,
+  video,
+  iframe,
+  canvas {
+    max-width: 100% !important;
+  }
+
+  .hero,
+  .section,
+  .projects-section,
+  .focus-card,
+  .skill-card,
+  .education-card,
+  .project-card,
+  .contact-card,
+  .current-panel {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 20px) !important;
+  }
+
+  .hero h1 {
+    font-size: 32px !important;
+  }
+
+  .actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .facts strong {
+    font-size: 12.5px !important;
+  }
+
+  .facts span {
+    font-size: 9px !important;
+  }
+
+  .education-card {
+    grid-template-columns: 96px minmax(0, 1fr) !important;
+  }
+
+  .education-image {
+    width: 96px !important;
+  }
+}
+
+
+/* =========================================================
+   CORRECCIÓN FINAL - CONTRASTE DE BOTONES DE CONTACTO
+   La regla .contact-card a heredaba el color del texto en
+   tema claro y sobrescribía el blanco de los botones.
+========================================================= */
+.contact-card a.reveal-contact-btn,
+.contact-card a.reveal-contact-btn:visited,
+.contact-card a.reveal-contact-btn:hover,
+.contact-card a.reveal-contact-btn:focus {
+  color: var(--button-text);
+}
+
+/* El botón HTML de teléfono usa la misma apariencia. */
+.contact-card button.reveal-contact-btn {
+  color: var(--button-text);
+}
+
+/* ===== MOBILE POLISH FINAL 2026 ===== */
+
+/* ===== MOBILE POLISH FINAL 2026 =====
+   Ajustes exclusivos para teléfonos.
+   Escritorio y tablet se mantienen intactos.
+========================================================= */
+@media (max-width: 560px) {
+
+  /* Base */
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 24px) !important;
+    max-width: none !important;
+    margin-inline: auto;
+  }
+
+  .site-header .container {
+    width: calc(100% - 20px) !important;
+  }
+
+  .nav {
+    min-height: 58px !important;
+  }
+
+  /* -----------------------------------------------------
+     HERO MÓVIL
+     Foto y cabecera comparten la parte superior, evitando
+     que la fotografía quede perdida varias pantallas abajo.
+  ----------------------------------------------------- */
+  .hero {
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 112px !important;
+    grid-template-rows: auto auto auto auto auto auto !important;
+    column-gap: 14px !important;
+    row-gap: 8px !important;
+    align-items: start !important;
+    padding: 24px 0 36px !important;
+  }
+
+  .hero-glow {
+    display: none !important;
+  }
+
+  .hero-copy {
+    display: contents !important;
+  }
+
+  .availability {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    max-width: 100%;
+    padding: 6px 8px !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero .kicker {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 4px 0 2px !important;
+    font-size: 9px !important;
+    line-height: 1.25 !important;
+    letter-spacing: .11em !important;
+  }
+
+  .hero h1 {
+    grid-column: 1;
+    grid-row: 3;
+    margin: 0 !important;
+    max-width: 100% !important;
+    font-size: clamp(28px, 8.7vw, 36px) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.035em !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .hero h1 br {
+    display: none !important;
+  }
+
+  .hero h1 span {
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  .portrait {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    width: 112px !important;
+    margin: 0 !important;
+    justify-self: end !important;
+    align-self: stretch !important;
+  }
+
+  .portrait::before {
+    display: none !important;
+  }
+
+  .portrait img {
+    width: 112px !important;
+    height: 142px !important;
+    max-width: none !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    border-radius: 10px !important;
+  }
+
+  .portrait figcaption {
+    display: none !important;
+  }
+
+  .hero .intro {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    margin: 10px 0 0 !important;
+    max-width: none !important;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .hero .actions {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 10px !important;
+  }
+
+  .hero .actions .button {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 9px 8px !important;
+    font-size: 12px !important;
+  }
+
+  .facts {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+    border-top: 1px solid var(--line) !important;
+    border-bottom: 1px solid var(--line) !important;
+  }
+
+  .facts div {
+    min-height: 58px !important;
+    padding: 10px 4px !important;
+    text-align: center !important;
+    border-right: 1px solid var(--line) !important;
+  }
+
+  .facts div:last-child {
+    border-right: 0 !important;
+  }
+
+  .facts strong {
+    font-size: 12.5px !important;
+    line-height: 1.15 !important;
+  }
+
+  .facts span {
+    margin-top: 2px;
+    font-size: 9px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* -----------------------------------------------------
+     SECCIONES Y TARJETAS
+     Evitamos tarjetas gigantes a pantalla completa.
+  ----------------------------------------------------- */
+  .section,
+  .projects-section,
+  .contact {
+    padding-block: 38px !important;
+  }
+
+  .section h2,
+  .contact h2,
+  .projects-header h2 {
+    font-size: clamp(26px, 7.5vw, 32px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .compact-header,
+  .education-header,
+  .projects-header {
+    display: block !important;
+    margin-bottom: 18px !important;
+  }
+
+  .focus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+  }
+
+  .focus-card {
+    display: block !important;
+    min-height: 0 !important;
+    padding: 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .focus-icon {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .focus-card h3 {
+    margin: 0 0 5px !important;
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  .focus-card p {
+    font-size: 11.5px !important;
+    line-height: 1.42 !important;
+  }
+
+  /* Conocimientos: dos columnas reales en móvil */
+  .skills-grid,
+  .skills-grid-six {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 9px !important;
+  }
+
+  .skill-card {
+    min-height: 0 !important;
+    padding: 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .skill-card h3 {
+    margin: 3px 0 9px !important;
+    font-size: 16px !important;
+  }
+
+  .skill-tags {
+    gap: 5px !important;
+  }
+
+  .skill-tags span,
+  .method-tags span {
+    padding: 5px 7px !important;
+    font-size: 10px !important;
+  }
+
+  .method-card {
+    min-height: 0 !important;
+    padding: 12px !important;
+  }
+
+  /* Formación: miniatura lateral */
+  .education-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .education-card {
+    display: grid !important;
+    grid-template-columns: 96px minmax(0, 1fr) !important;
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .education-image {
+    width: 96px !important;
+    height: 100% !important;
+    min-height: 132px !important;
+    max-height: 160px !important;
+    padding: 6px !important;
+  }
+
+  .education-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .education-image > span {
+    right: 4px !important;
+    bottom: 4px !important;
+    padding: 3px 5px !important;
+    font-size: 8px !important;
+  }
+
+  .education-content {
+    padding: 11px !important;
+  }
+
+  .education-year {
+    margin-bottom: 4px !important;
+    font-size: 9px !important;
+  }
+
+  .education-content h3 {
+    margin: 0 0 5px !important;
+    font-size: 14px !important;
+    line-height: 1.18 !important;
+  }
+
+  .education-content > p:not(.education-year) {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  .daw-card {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Proyectos y experiencia */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .project-card {
+    min-height: 0 !important;
+    padding: 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .project-card h3 {
+    font-size: 17px !important;
+  }
+
+  .project-image img {
+    max-height: 190px !important;
+    object-fit: cover !important;
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 10px !important;
+  }
+
+  .featured-project .project-image,
+  .featured-visual {
+    min-height: 160px !important;
+  }
+
+  .timeline article {
+    padding-bottom: 14px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .timeline h3 {
+    font-size: 16px !important;
+  }
+
+  .timeline p,
+  .timeline li {
+    font-size: 12.5px !important;
+    line-height: 1.48 !important;
+  }
+
+  /* Contacto */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .contact-card {
+    min-height: 0 !important;
+    padding: 14px !important;
+  }
+
+  .email-provider-actions,
+  .contact-actions-inline {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+  }
+
+  .email-fallback-link {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Teléfonos muy estrechos */
+@media (max-width: 380px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 94px !important;
+  }
+
+  .portrait,
+  .portrait img {
+    width: 94px !important;
+  }
+
+  .portrait img {
+    height: 122px !important;
+  }
+
+  .hero h1 {
+    font-size: 27px !important;
+  }
+
+  .focus-grid,
+  .skills-grid,
+  .skills-grid-six {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero .actions,
+  .email-provider-actions,
+  .contact-actions-inline {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   TEMA CLARO - CONTRASTE WHATSAPP
+========================================================= */
+.contact-card a.whatsapp-btn,
+.contact-card a.whatsapp-btn:visited,
+.contact-card a.whatsapp-btn:focus {
+  color: var(--ink) !important;
+}
+
+.contact-card a.whatsapp-btn:hover {
+  color: #fff !important;
+}
+
+/* Remate final: evita partir palabras del título de Experiencia en escritorio. */
+#experiencia h2 {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  font-size: clamp(36px, 4vw, 54px);
+}
+
+@media (max-width: 900px) {
+  #experiencia h2 {
+    font-size: clamp(32px, 8vw, 46px);
+  }
+}
+
+@media (max-width: 560px) {
+  #experiencia h2 {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+}

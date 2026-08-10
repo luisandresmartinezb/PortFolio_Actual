@@ -17,6 +17,7 @@
   const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
   root.dataset.theme = saved || (prefersLight ? 'light' : 'dark');
 
+  // Theme: restore the saved preference and allow manual switching.
   const themeToggle = document.getElementById('themeToggle');
   const updateThemeIcon = () => { if(themeToggle) themeToggle.textContent = root.dataset.theme === 'dark' ? '☀' : '◐'; };
   updateThemeIcon();
@@ -26,6 +27,7 @@
     updateThemeIcon();
   });
 
+  // Mobile navigation: toggle the menu and keep ARIA state synchronized.
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   menuToggle?.setAttribute('aria-expanded', 'false');
@@ -36,6 +38,7 @@
   });
   navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); menuToggle?.setAttribute('aria-expanded', 'false'); }));
 
+  // Reveal animation: activate each section only once when it enters the viewport.
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -43,6 +46,7 @@
   }, {threshold: .12});
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // Desktop-only visual effects: cursor glow and subtle project-card tilt.
   if(window.matchMedia('(pointer:fine)').matches){
     const glow = document.createElement('div'); glow.className='cursor-glow'; document.body.appendChild(glow);
     window.addEventListener('pointermove', e => { glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
@@ -56,7 +60,7 @@
     });
   }
 })();
-// Mantiene un espacio visual limpio si una captura aún no existe.
+// Project image fallback: hide broken images and show a readable placeholder.
 document.querySelectorAll('.project-card .project-image img').forEach((img) => {
   img.addEventListener('error', () => {
     img.hidden = true;
@@ -71,14 +75,14 @@ document.querySelectorAll('.project-card .project-image img').forEach((img) => {
 });
 
 
-// Keep the same section when switching language.
+// Language switch: preserve the current section anchor between ES and EN pages.
 document.querySelectorAll('.language-switch a').forEach(link => {
   link.addEventListener('click', () => {
     if (window.location.hash) link.href = link.getAttribute('href').split('#')[0] + window.location.hash;
   });
 });
 
-// Contact actions
+// Contact actions: reveal the phone number only after an explicit user action.
 const telefono = document.getElementById("telefono");
 const botonTelefono = document.getElementById("mostrarTelefono");
 if (telefono && botonTelefono) {
@@ -88,7 +92,7 @@ if (telefono && botonTelefono) {
   });
 }
 
-// Certificate viewer
+// Certificate viewer: open credential images in an accessible modal dialog.
 const certModal=document.getElementById('certModal');
 const certModalImage=document.getElementById('certModalImage');
 document.querySelectorAll('[data-cert]').forEach(btn=>btn.addEventListener('click',()=>{certModalImage.src=btn.dataset.cert;certModal.classList.add('open');certModal.setAttribute('aria-hidden','false')}));
