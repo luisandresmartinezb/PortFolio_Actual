@@ -571,3 +571,896 @@
   .skill p { font-size: 7.45px !important; line-height: 1.28 !important; }
   .footer-note { font-size: 7.05px !important; }
 }
+
+
+/* ===== CV MOBILE VIEW FIX 2026 =====
+   Solo afecta a la visualización en móvil, no al PDF/A4. */
+@media screen and (max-width: 600px) {
+  html, body {
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+    background: #eef2f6;
+  }
+
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+
+  .page,
+  .cv,
+  .resume {
+    width: calc(100% - 16px) !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 8px auto !important;
+    padding: 14px !important;
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+  .header,
+  header {
+    grid-template-columns: 1fr !important;
+  }
+
+  .profile,
+  .content {
+    grid-template-columns: 1fr !important;
+  }
+
+  main,
+  aside,
+  .right {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .profile img {
+    width: 82px !important;
+    height: auto !important;
+  }
+
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2,
+  h3 {
+    line-height: 1.2 !important;
+  }
+
+  p,
+  li,
+  span {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* ===== CV RESPONSIVE DEFINITIVO 2026 ===== */
+
+/* ===== CV RESPONSIVE DEFINITIVO 2026 =====
+   Solo cambia la visualización del CV en teléfonos.
+   Escritorio/tablet mantienen el diseño Harvard de dos columnas.
+============================================================== */
+@media screen and (max-width: 640px) {
+  html,
+  body {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    background: #eef2f6 !important;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Barra superior */
+  .toolbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 8px 10px !important;
+  }
+
+  .lang {
+    display: flex !important;
+    gap: 4px !important;
+  }
+
+  .toolbar-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+  }
+
+  .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 9px 7px !important;
+    font-size: 11px !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Hoja: deja de comportarse como A4 en pantalla móvil */
+  .cv-page,
+  article.cv-page {
+    display: block !important;
+    position: relative !important;
+    width: calc(100% - 12px) !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 6px auto 18px !important;
+    padding: 14px 12px 18px !important;
+    overflow: visible !important;
+    box-shadow: 0 8px 28px rgba(15, 35, 55, .10) !important;
+  }
+
+  /* Cabecera */
+  .header {
+    display: block !important;
+    padding: 6px 0 12px !important;
+  }
+
+  .header h1 {
+    margin: 0 0 7px !important;
+    font-size: clamp(23px, 7.4vw, 31px) !important;
+    line-height: 1.04 !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .headline {
+    margin: 0 !important;
+    font-size: 10.5px !important;
+    line-height: 1.45 !important;
+    white-space: normal !important;
+  }
+
+  .contact {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 3px !important;
+    margin-top: 11px !important;
+    padding-top: 9px !important;
+    border-top: 1px solid var(--line) !important;
+    text-align: left !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+
+  .contact .license {
+    white-space: normal !important;
+    font-size: 11px !important;
+  }
+
+  .contact a {
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Descripción profesional: foto + texto */
+  .profile {
+    display: grid !important;
+    grid-template-columns: 78px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    align-items: start !important;
+    margin-top: 10px !important;
+    padding: 12px !important;
+  }
+
+  .portrait {
+    width: 78px !important;
+    height: 104px !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+  }
+
+  .profile .section-title {
+    margin-bottom: 7px !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+  }
+
+  .profile p {
+    margin: 0 !important;
+    font-size: 11.5px !important;
+    line-height: 1.48 !important;
+    text-align: left !important;
+  }
+
+  /* En móvil, experiencia y columna lateral se convierten en un flujo único */
+  .content {
+    display: block !important;
+    margin-top: 14px !important;
+  }
+
+  main,
+  aside,
+  .right {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .right {
+    margin-top: 18px !important;
+    padding: 0 !important;
+    border-left: 0 !important;
+  }
+
+  .section-title {
+    margin: 0 0 9px !important;
+    padding-bottom: 6px !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Experiencia */
+  .job {
+    padding: 10px 0 !important;
+  }
+
+  .job-head {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 7px !important;
+    align-items: start !important;
+  }
+
+  .job h3 {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  .company {
+    margin-top: 2px !important;
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+  }
+
+  .date {
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+  }
+
+  .job ul {
+    margin: 6px 0 0 !important;
+    padding-left: 18px !important;
+  }
+
+  .job li {
+    margin: 3px 0 !important;
+    font-size: 11.5px !important;
+    line-height: 1.42 !important;
+  }
+
+  /* Columna técnica */
+  .side-section {
+    margin-bottom: 13px !important;
+    padding-bottom: 11px !important;
+  }
+
+  .side-list {
+    padding-left: 18px !important;
+  }
+
+  .side-list li,
+  .side-section p,
+  .compact-list li,
+  .bring-list li,
+  .expertise-list li {
+    font-size: 11.5px !important;
+    line-height: 1.42 !important;
+  }
+
+  .skill {
+    margin-bottom: 8px !important;
+  }
+
+  .skill h3,
+  .expertise-list strong {
+    font-size: 11.5px !important;
+  }
+
+  .skill p {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* El pie deja de estar anclado al fondo de una hoja A4 */
+  .footer-note {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 16px 0 0 !important;
+    padding: 9px 10px !important;
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .toolbar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .toolbar-group {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .profile {
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    gap: 9px !important;
+  }
+
+  .portrait {
+    width: 64px !important;
+    height: 86px !important;
+  }
+
+  .profile p,
+  .job li,
+  .side-list li,
+  .side-section p,
+  .compact-list li,
+  .bring-list li,
+  .expertise-list li {
+    font-size: 11px !important;
+  }
+
+  .job-head {
+    grid-template-columns: 1fr !important;
+  }
+
+  .date {
+    margin-top: 2px !important;
+  }
+}
+
+/* =============================================================
+   IMPRESIÓN/PDF
+   La vista móvil NO modifica el documento impreso:
+   siempre se fuerza el Harvard A4 de una sola hoja.
+============================================================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page,
+  article.cv-page {
+    display: block !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-width: 210mm !important;
+    min-height: 297mm !important;
+    max-width: 210mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    transform: none !important;
+    zoom: 1 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  .header {
+    display: grid !important;
+  }
+
+  .profile {
+    display: grid !important;
+  }
+
+  .content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.66fr) minmax(0, .84fr) !important;
+  }
+
+  .right {
+    border-left: .25mm solid var(--line) !important;
+  }
+
+  .footer-note {
+    position: absolute !important;
+  }
+}
+
+
+/* === CV FINAL AUTHORITATIVE MOBILE + PRINT 2026 ===
+   Este bloque manda sobre los anteriores para evitar conflictos.
+   Pantalla móvil: flujo vertical legible.
+   Impresión: una sola hoja A4 con el diseño Harvard de dos columnas.
+=============================================================== */
+@media screen and (max-width: 640px) {
+  html, body {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    background: #eef2f6 !important;
+  }
+
+  .toolbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .toolbar-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+
+  .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 9px 6px !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+  }
+
+  .cv-page {
+    display: block !important;
+    position: relative !important;
+    width: calc(100% - 12px) !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 6px auto 18px !important;
+    padding: 14px 12px 18px !important;
+    overflow: visible !important;
+    box-shadow: 0 6px 24px rgba(15,35,55,.10) !important;
+  }
+
+  .header,
+  .content {
+    display: block !important;
+  }
+
+  .header h1 {
+    white-space: normal !important;
+    font-size: 25px !important;
+    line-height: 1.06 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .headline {
+    white-space: normal !important;
+    font-size: 11px !important;
+    line-height: 1.42 !important;
+  }
+
+  .contact {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 3px !important;
+    margin-top: 10px !important;
+    padding-top: 8px !important;
+    border-top: 1px solid var(--line) !important;
+    text-align: left !important;
+    font-size: 11px !important;
+  }
+
+  .contact a,
+  .contact span {
+    overflow-wrap: anywhere !important;
+  }
+
+  .profile {
+    display: grid !important;
+    grid-template-columns: 72px minmax(0,1fr) !important;
+    gap: 11px !important;
+    align-items: start !important;
+    padding: 11px !important;
+    margin-top: 10px !important;
+  }
+
+  .portrait {
+    width: 72px !important;
+    height: 96px !important;
+    object-fit: cover !important;
+  }
+
+  .profile p {
+    font-size: 11.5px !important;
+    line-height: 1.46 !important;
+    text-align: left !important;
+  }
+
+  .section-title {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+  }
+
+  main,
+  aside,
+  .right {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .right {
+    margin-top: 18px !important;
+    padding-left: 0 !important;
+    border-left: 0 !important;
+  }
+
+  .job {
+    padding: 9px 0 !important;
+  }
+
+  .job-head {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) auto !important;
+    gap: 7px !important;
+  }
+
+  .job h3 { font-size: 14px !important; }
+  .company { font-size: 11px !important; }
+  .date { font-size: 10px !important; white-space: nowrap !important; }
+  .job li,
+  .side-list li,
+  .side-section p,
+  .compact-list li,
+  .bring-list li,
+  .expertise-list li {
+    font-size: 11.3px !important;
+    line-height: 1.42 !important;
+  }
+
+  .footer-note {
+    position: static !important;
+    margin-top: 16px !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .toolbar { grid-template-columns: 1fr !important; }
+  .profile { grid-template-columns: 60px minmax(0,1fr) !important; }
+  .portrait { width: 60px !important; height: 80px !important; }
+  .job-head { grid-template-columns: 1fr !important; }
+  .date { margin-top: 2px !important; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 0; }
+
+  html, body {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    overflow: hidden !important;
+  }
+
+  .no-print { display: none !important; }
+
+  .cv-page {
+    display: block !important;
+    position: relative !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 5mm 6mm 4mm !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    transform: none !important;
+    zoom: 1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .header {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) 52mm !important;
+    gap: 4mm !important;
+    padding-top: 1.5mm !important;
+  }
+
+  .header h1 {
+    font-size: 16.8pt !important;
+    line-height: 1.02 !important;
+    white-space: nowrap !important;
+  }
+
+  .headline {
+    font-size: 6.8pt !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+  }
+
+  .contact {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    text-align: right !important;
+    font-size: 6.5pt !important;
+    line-height: 1.18 !important;
+  }
+
+  .profile {
+    display: grid !important;
+    grid-template-columns: 22mm minmax(0,1fr) !important;
+    gap: 3mm !important;
+    margin-top: 1.6mm !important;
+    padding: 2.4mm !important;
+  }
+
+  .portrait {
+    width: 22mm !important;
+    height: 29mm !important;
+  }
+
+  .profile .section-title { font-size: 8pt !important; }
+  .profile p { font-size: 7.2pt !important; line-height: 1.24 !important; }
+
+  .content {
+    display: grid !important;
+    grid-template-columns: minmax(0,1.68fr) minmax(0,.82fr) !important;
+    gap: 3.5mm !important;
+    margin-top: 1.8mm !important;
+  }
+
+  .right {
+    margin-top: 0 !important;
+    padding-left: 3mm !important;
+    border-left: .25mm solid var(--line) !important;
+  }
+
+  .section-title {
+    font-size: 7.8pt !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1.2mm !important;
+    padding-bottom: .8mm !important;
+  }
+
+  .job { padding: .75mm 0 !important; }
+  .job h3 { font-size: 7.2pt !important; line-height: 1.08 !important; }
+  .company, .date { font-size: 6.15pt !important; line-height: 1.08 !important; }
+  .job ul { margin-top: .55mm !important; padding-left: 3.7mm !important; }
+  .job li { font-size: 6.15pt !important; line-height: 1.16 !important; margin: .28mm 0 !important; }
+
+  .side-section { margin-bottom: 1.4mm !important; padding-bottom: 1.1mm !important; }
+  .side-list { padding-left: 3.3mm !important; }
+  .side-list li,
+  .side-section p,
+  .compact-list li,
+  .bring-list li,
+  .expertise-list li,
+  .skill p,
+  .skill h3 {
+    font-size: 5.9pt !important;
+    line-height: 1.15 !important;
+  }
+
+  .footer-note {
+    position: absolute !important;
+    left: 6mm !important;
+    right: 6mm !important;
+    bottom: 3.2mm !important;
+    margin: 0 !important;
+    padding: 1.4mm 2mm !important;
+    font-size: 6.2pt !important;
+    line-height: 1.15 !important;
+  }
+}
+
+
+/* ==========================================================================
+   IMPRESIÓN A4 FINAL
+   Corrige solapamientos de cabecera y mantiene el CV en una sola página.
+   Estas reglas deben permanecer al FINAL del archivo para tener prioridad.
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cv-page {
+    box-sizing: border-box !important;
+    position: relative !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    min-width: 210mm !important;
+    min-height: 297mm !important;
+    max-width: 210mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 5mm 6mm 4mm !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+  /* La cabecera reserva espacio real al contacto para que nunca se monte. */
+  .header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 49mm !important;
+    column-gap: 4mm !important;
+    align-items: start !important;
+    padding-top: 1.3mm !important;
+  }
+
+  .header > div:first-child {
+    min-width: 0 !important;
+    padding-right: 1mm !important;
+  }
+
+  .header h1 {
+    margin: 0 0 .8mm !important;
+    font-size: 16.2pt !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    letter-spacing: -.15pt !important;
+  }
+
+  /* En impresión el titular puede ocupar dos líneas: evita invadir el contacto. */
+  .headline {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    font-size: 6.15pt !important;
+    line-height: 1.18 !important;
+    letter-spacing: .12pt !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .contact {
+    min-width: 0 !important;
+    width: 49mm !important;
+    text-align: right !important;
+    font-size: 6.15pt !important;
+    line-height: 1.16 !important;
+  }
+
+  .contact a,
+  .contact span {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 0 .28mm !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+  }
+
+  .contact .license {
+    font-size: 6.1pt !important;
+  }
+
+  .profile {
+    grid-template-columns: 22mm minmax(0, 1fr) !important;
+    gap: 3mm !important;
+    margin-top: 1.5mm !important;
+    padding: 2.3mm !important;
+  }
+
+  .profile p {
+    font-size: 7.05pt !important;
+    line-height: 1.22 !important;
+  }
+
+  .content {
+    grid-template-columns: minmax(0, 1.68fr) minmax(0, .82fr) !important;
+    gap: 3.5mm !important;
+    margin-top: 1.6mm !important;
+  }
+
+  .job {
+    padding: .68mm 0 !important;
+  }
+
+  .job h3 {
+    font-size: 7.15pt !important;
+  }
+
+  .company,
+  .date {
+    font-size: 6.05pt !important;
+  }
+
+  .job li {
+    font-size: 6.05pt !important;
+    line-height: 1.14 !important;
+    margin: .24mm 0 !important;
+  }
+
+  .side-section {
+    margin-bottom: 1.25mm !important;
+    padding-bottom: 1mm !important;
+  }
+
+  .side-list li,
+  .side-section p,
+  .compact-list li,
+  .bring-list li,
+  .expertise-list li,
+  .skill p,
+  .skill h3 {
+    font-size: 5.8pt !important;
+    line-height: 1.13 !important;
+  }
+
+  .footer-note {
+    left: 6mm !important;
+    right: 6mm !important;
+    bottom: 3mm !important;
+    font-size: 6pt !important;
+  }
+}
