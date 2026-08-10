@@ -1015,7 +1015,11 @@ footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted)
   .container { width: min(1200px, calc(100% - 72px)); }
   .hero { min-height: 720px; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: clamp(56px, 6vw, 96px); }
   .hero-copy { max-width: 790px; }
-  .portrait img, .portrait figcaption { max-width: 390px; }
+  .portrait img,
+  .portrait figcaption {
+    width: 100%;
+    max-width: none;
+  }
   .projects-grid { gap: 1.25rem; }
 }
 
@@ -2240,15 +2244,19 @@ a, p, li, h1, h2, h3, h4, span { overflow-wrap: break-word; }
   }
 }
 
-/* =========================================================
-   FIX FINAL FOTO HERO — ESCRITORIO
-   La imagen debe ocupar todo el ancho de su tarjeta.
-   Evita la franja lateral causada por el max-width de 390px.
-========================================================= */
+
+/* FIX DEFINITIVO FOTO HERO ESCRITORIO 2026
+   La tarjeta y su imagen deben compartir exactamente el mismo ancho. */
 @media (min-width: 1280px) {
+  .portrait {
+    width: 100%;
+    max-width: 430px;
+  }
+
   .portrait img,
   .portrait figcaption {
-    width: 100% !important;
-    max-width: none !important;
+    display: block;
+    width: 100%;
+    max-width: none;
   }
 }
