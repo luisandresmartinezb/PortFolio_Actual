@@ -500,3 +500,59 @@ html.phone-device img { max-width:100% !important; }
   html.phone-device .container { width:calc(100% - 28px) !important; }
   html.phone-device .hero h1 { font-size:clamp(38px,11vw,48px) !important; }
 }
+
+/* =========================================================
+   V8 — ANDROID FONT BOOSTING FIX
+   Chrome/Brave Android can automatically enlarge text when a page is
+   rendered with a desktop-like layout. That browser text autosizing was
+   overriding the visual scale even though the responsive grid was correct.
+   ========================================================= */
+html,
+body {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+html.phone-device,
+html.phone-device body,
+html.compact-device,
+html.compact-device body {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+/* Fixed mobile typography: do not derive body copy from viewport width. */
+html.phone-device .hero .intro,
+html.compact-device .hero .intro {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0 !important;
+}
+html.phone-device .mobile-language-switch a,
+html.compact-device .mobile-language-switch a {
+  font-size: 13px !important;
+  line-height: 1 !important;
+}
+html.phone-device .kicker,
+html.compact-device .kicker {
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+html.phone-device .availability,
+html.compact-device .availability {
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+html.phone-device .section-lead,
+html.compact-device .section-lead,
+html.phone-device .section p,
+html.compact-device .section p {
+  text-size-adjust: 100% !important;
+  -webkit-text-size-adjust: 100% !important;
+}
+
+@media screen and (max-width: 700px) {
+  html, body { -webkit-text-size-adjust:100% !important; text-size-adjust:100% !important; }
+  .intro { font-size:16px !important; line-height:1.65 !important; }
+  .mobile-language-switch a { font-size:13px !important; }
+}
