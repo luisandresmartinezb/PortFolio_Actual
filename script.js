@@ -103,13 +103,14 @@ certModal?.addEventListener('click',e=>{if(e.target===certModal){certModal.class
 // screen.width remains the physical CSS viewport on phones even when the browser
 // requests a desktop layout, so this class prevents desktop grids from being
 // squeezed into a narrow physical display.
-(function applyCompactDeviceMode() {
+(function applyPhoneDeviceMode() {
   const root = document.documentElement;
-  const update = () => {
-    const shortestSide = Math.min(screen.width || innerWidth, screen.height || innerHeight);
-    root.classList.toggle('compact-device', shortestSide <= 700);
-  };
-  update();
-  window.addEventListener('resize', update, { passive: true });
-  window.addEventListener('orientationchange', update, { passive: true });
+  const ua = navigator.userAgent || '';
+  const uaDataMobile = navigator.userAgentData && navigator.userAgentData.mobile === true;
+  const android = /Android/i.test(ua);
+  const iphone = /iPhone|iPod/i.test(ua);
+  const touchPhone = navigator.maxTouchPoints > 0 && Math.min(screen.width || 9999, screen.height || 9999) <= 700;
+  const isPhone = uaDataMobile || android || iphone || touchPhone;
+  root.classList.toggle('phone-device', isPhone);
+  root.classList.toggle('compact-device', isPhone);
 })();
