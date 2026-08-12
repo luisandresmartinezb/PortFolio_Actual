@@ -98,3 +98,18 @@ const certModalImage=document.getElementById('certModalImage');
 document.querySelectorAll('[data-cert]').forEach(btn=>btn.addEventListener('click',()=>{certModalImage.src=btn.dataset.cert;certModal.classList.add('open');certModal.setAttribute('aria-hidden','false')}));
 document.getElementById('closeCert')?.addEventListener('click',()=>{certModal.classList.remove('open');certModal.setAttribute('aria-hidden','true')});
 certModal?.addEventListener('click',e=>{if(e.target===certModal){certModal.classList.remove('open');certModal.setAttribute('aria-hidden','true')}});
+
+// Responsive safety net for real phones, including browsers using "Desktop site".
+// screen.width remains the physical CSS viewport on phones even when the browser
+// requests a desktop layout, so this class prevents desktop grids from being
+// squeezed into a narrow physical display.
+(function applyCompactDeviceMode() {
+  const root = document.documentElement;
+  const update = () => {
+    const shortestSide = Math.min(screen.width || innerWidth, screen.height || innerHeight);
+    root.classList.toggle('compact-device', shortestSide <= 700);
+  };
+  update();
+  window.addEventListener('resize', update, { passive: true });
+  window.addEventListener('orientationchange', update, { passive: true });
+})();

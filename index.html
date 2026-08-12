@@ -3,12 +3,21 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="Portfolio profesional de Luis Andrés Martínez Berraquero, desarrollador Full Stack con experiencia en sistemas, soporte IT, bases de datos e IA aplicada." name="description"/>
+    <script id="mobile-device-detector">
+   /* Detecta teléfonos reales incluso si el navegador solicita sitio de escritorio. */
+   (function () {
+     var shortestSide = Math.min(window.screen.width || 9999, window.screen.height || 9999);
+     var isTouchPhone = navigator.maxTouchPoints > 0 && shortestSide <= 600;
+     if (isTouchPhone) document.documentElement.classList.add('mobile-device');
+   })();
+  </script>
+<meta content="Portfolio profesional de Luis Andrés Martínez Berraquero, desarrollador Full Stack con experiencia en sistemas, soporte IT, bases de datos e IA aplicada." name="description"/>
   <title>
    Luis Andrés Martínez Berraquero | Desarrollo Full Stack, Sistemas e IA
   </title>
-  <link href="styles.css?v=20260810-final-audit" rel="stylesheet"/>
- </head>
+  <link href="styles.css?v=20260810-responsive-final-4" rel="stylesheet"/>
+   <link href="mobile.css?v=20260812-1" rel="stylesheet"/>
+</head>
  <body>
   <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
   <header class="site-header">
@@ -1419,7 +1428,7 @@
     Luis Andrés Martínez Berraquero · Madrid · 2026
    </div>
   </footer>
-  <script src="script.js?v=20260801-final">
+  <script src="script.js?v=20260810-responsive-final-4">
   </script>
  </body>
 </html>
