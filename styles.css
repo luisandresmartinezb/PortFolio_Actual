@@ -2333,3 +2333,78 @@ a, p, li, h1, h2, h3, h4, span { overflow-wrap: break-word; }
   .education-image img { max-height:190px !important; }
   .education-content { padding:17px !important; }
 }
+
+
+/* ==========================================================================
+   V11 — Posicionamiento profesional y selector de idioma
+   ========================================================================== */
+.mobile-language-switch{display:none;}
+.hero-support-line{
+  margin:.35rem 0 1rem;
+  color:var(--muted);
+  font-size:.95rem;
+  line-height:1.45;
+}
+
+
+/* ==========================================================================
+   V11.1 FINAL — HEADER RESPONSIVE
+   Corrige exclusivamente la navegación. No modifica hero, CV, carta o cards.
+   ========================================================================== */
+
+/* Escritorio: impedir saltos de línea y permitir que el nav se adapte. */
+.site-header .nav,
+header .nav,
+.navbar,
+.nav-inner {
+  min-width: 0;
+}
+
+.site-header nav,
+header nav {
+  flex-wrap: nowrap !important;
+}
+
+.site-header nav a,
+.site-header nav button,
+header nav a,
+header nav button {
+  white-space: nowrap;
+}
+
+/* En anchos de portátil/escritorio reducidos, compactamos el menú antes
+   de permitir que el botón CV se corte. */
+@media (min-width: 901px) and (max-width: 1450px) {
+  .site-header,
+  header {
+    padding-left: clamp(18px, 3vw, 56px) !important;
+    padding-right: clamp(18px, 3vw, 56px) !important;
+  }
+
+  .site-header nav,
+  header nav {
+    gap: clamp(8px, 1.15vw, 18px) !important;
+  }
+
+  .site-header nav a,
+  .site-header nav button,
+  header nav a,
+  header nav button {
+    font-size: clamp(12px, .9vw, 14px) !important;
+  }
+}
+
+/* Zona conflictiva: ocultamos navegación secundaria y dejamos accesible
+   mediante hamburguesa si el HTML ya la implementa. */
+@media (min-width: 901px) and (max-width: 1180px) {
+  .site-header nav,
+  header nav {
+    gap: 8px !important;
+  }
+}
+
+/* V11.2: header sin nombre duplicado; libera espacio para navegación */
+@media (min-width: 901px) {
+  .site-header .nav { justify-content: flex-end; }
+  .site-header .nav-links { width: 100%; justify-content: flex-end; }
+}
