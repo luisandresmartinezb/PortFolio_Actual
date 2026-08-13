@@ -1464,3 +1464,13 @@
     font-size: 6pt !important;
   }
 }
+
+
+/* Tema oscuro de pantalla. La impresión A4 conserva fondo blanco. */
+@media screen {
+html[data-theme="dark"]{--ink:#e8edf1;--muted:#aebbc5;--line:#33444f;--soft:#14232c;--paper:#101a20;--canvas:#0b1318;--navy:#75b4c5;--navy2:#5d9eaf;}
+html[data-theme="dark"] .btn,html[data-theme="dark"] .lang{background:#101a20;color:#e8edf1;border-color:#33444f;}
+html[data-theme="dark"] .btn.primary,html[data-theme="dark"] .lang a.active{background:#3f8192;color:#fff;border-color:#3f8192;}
+html[data-theme="dark"] .profile,html[data-theme="dark"] .project-grid div,html[data-theme="dark"] .specialty-grid>div{background:#14232c;}
+html[data-theme="dark"] .profile p,html[data-theme="dark"] .job li,html[data-theme="dark"] .side-list li,html[data-theme="dark"] .side-section p{color:#c1ccd2;}
+}
