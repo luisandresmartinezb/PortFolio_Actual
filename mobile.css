@@ -621,41 +621,8 @@ html.is-phone svg {
   }
 }
 
-/* V10: único ajuste sobre el responsive V9: foto a la derecha del hero. */
-html.is-phone .hero{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) 112px!important;
-  grid-template-areas:"copy portrait"!important;
-  align-items:start!important;
-  column-gap:12px!important;
-}
-html.is-phone .hero-copy{grid-area:copy!important;order:initial!important;min-width:0!important}
-html.is-phone .portrait{
-  grid-area:portrait!important;order:initial!important;width:112px!important;
-  max-width:112px!important;margin:42px 0 0!important;justify-self:end!important
-}
-html.is-phone .portrait img{width:112px!important;height:auto!important}
-html.is-phone .portrait figcaption{width:112px!important;font-size:7.5px!important;padding:6px 4px!important}
-html.is-phone .hero h1{font-size:clamp(28px,8vw,35px)!important}
-html.is-phone .hero .intro{font-size:13px!important;line-height:1.5!important}
-html.is-phone .hero .actions{grid-template-columns:1fr!important}
-@media(max-width:370px){
- html.is-phone .hero{grid-template-columns:minmax(0,1fr) 96px!important;column-gap:8px!important}
- html.is-phone .portrait,html.is-phone .portrait img,html.is-phone .portrait figcaption{width:96px!important;max-width:96px!important}
- html.is-phone .hero h1{font-size:27px!important}
-}
-
-
-/* V11 — El selector móvil mantiene el formato de pastilla; el de escritorio
-   permanece dentro del menú y no se duplica visualmente. */
-html.is-phone .mobile-language-switch{display:flex!important;}
-html.is-phone .nav-links .language-switch{display:none!important;}
-html.is-phone .hero-support-line{
-  margin:0 0 10px!important;
-  font-size:11.5px!important;
-  line-height:1.4!important;
-}
-
+/* V11.4: eliminado el antiguo parche V10 que forzaba el hero móvil a dos columnas.
+   La fuente de verdad móvil está en los bloques responsive finales. */
 
 /* ==========================================================================
    V11.1 FINAL — HEADER MÓVIL EN UNA SOLA FILA
